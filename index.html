@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unity 개발자 포트폴리오</title>
+    <title>Unity 개발자 포트폴리오 | 다크 테마</title>
     <style>
         :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --card-hover: #334155;
-            --text-main: #f8fafc;
+            --bg-color: #0b0f19;
+            --card-bg: #151c2c;
+            --card-hover: #1e293b;
+            --text-main: #f1f5f9;
             --text-sub: #94a3b8;
             --accent-color: #38bdf8;
             --accent-hover: #0284c7;
-            --border-color: #334155;
+            --border-color: #243048;
         }
 
         * {
@@ -42,7 +42,6 @@
             padding: 0 20px;
         }
 
-        /* 프로필 섹션 */
         header {
             padding: 60px 0 40px 0;
             border-bottom: 1px solid var(--border-color);
@@ -52,12 +51,12 @@
             display: inline-block;
             background: rgba(56, 189, 248, 0.1);
             color: var(--accent-color);
-            padding: 6px 12px;
+            padding: 6px 14px;
             border-radius: 20px;
             font-size: 0.9rem;
             font-weight: 600;
             margin-bottom: 15px;
-            border: 1px solid rgba(56, 189, 248, 0.2);
+            border: 1px solid rgba(56, 189, 248, 0.25);
         }
 
         h1 {
@@ -72,13 +71,19 @@
             border-radius: 12px;
             padding: 25px;
             margin-top: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-card h3 {
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
         }
 
         .profile-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 15px;
-            margin-top: 15px;
         }
 
         .profile-item {
@@ -114,7 +119,7 @@
 
         .btn-primary {
             background: var(--accent-color);
-            color: #0f172a;
+            color: #0b0f19;
             border: none;
             font-weight: 600;
         }
@@ -124,7 +129,6 @@
             color: #fff;
         }
 
-        /* 섹션 공통 */
         section {
             padding: 40px 0;
         }
@@ -147,7 +151,6 @@
             border-radius: 2px;
         }
 
-        /* 프로젝트 카드 (링크형) */
         .project-link-card {
             display: block;
             background: var(--card-bg);
@@ -156,21 +159,21 @@
             padding: 25px;
             color: var(--text-main);
             transition: all 0.25s ease;
-            position: relative;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
 
         .project-link-card:hover {
             background: var(--card-hover);
             border-color: var(--accent-color);
             transform: translateY(-3px);
-            color: var(--text-main);
+            box-shadow: 0 8px 25px rgba(56, 189, 248, 0.15);
         }
 
         .project-card-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
 
         .project-title {
@@ -180,8 +183,8 @@
 
         .arrow-icon {
             color: var(--accent-color);
-            font-size: 1.2rem;
-            font-weight: bold;
+            font-size: 1rem;
+            font-weight: 600;
         }
 
         .system-list {
@@ -219,7 +222,6 @@
 <body>
 
     <div class="container">
-        <!-- 프로필 섹션 -->
         <header>
             <span class="role-badge">Unity Client Developer</span>
             <h1>이름 / 포트폴리오</h1>
@@ -241,11 +243,9 @@
             </div>
         </header>
 
-        <!-- 프로젝트 목록 섹션 -->
         <section id="project">
             <h2 class="section-title">프로젝트 목록</h2>
             
-            <!-- 다른 HTML 파일로 연결되는 프로젝트 카드 -->
             <a href="project-detail.html" class="project-link-card">
                 <div class="project-card-header">
                     <h3 class="project-title">1인 개발 RPG 프로젝트</h3>
@@ -263,7 +263,7 @@
         </section>
 
         <footer>
-            <p>© Portfolio. Built with HTML/CSS.</p>
+            <p>© Portfolio. Built with Dark Theme HTML/CSS.</p>
         </footer>
     </div>
 
