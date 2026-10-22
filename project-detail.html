@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>프로젝트 상세 정보 | 다크 테마</title>
+    <title>프로젝트 상세 정보</title>
     <style>
         :root {
-            --bg-color: #0b0f19;
-            --card-bg: #151c2c;
-            --text-main: #f1f5f9;
-            --text-sub: #94a3b8;
-            --accent-color: #38bdf8;
-            --border-color: #243048;
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --text-main: #e3e3e3;
+            --text-sub: #a0a0a0;
+            --border-color: #333333;
+            --accent-color: #ffffff;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
         }
 
         body {
@@ -29,44 +29,44 @@
         }
 
         a {
-            color: var(--accent-color);
+            color: var(--text-sub);
             text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--text-main);
         }
 
         .container {
-            max-width: 900px;
+            max-width: 850px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
         nav {
-            padding: 30px 0;
+            padding: 25px 0;
         }
 
         .back-link {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            font-weight: 600;
-            transition: color 0.2s;
-        }
-
-        .back-link:hover {
-            color: #0284c7;
+            font-size: 0.9rem;
         }
 
         .project-detail-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            padding: 25px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 700;
             margin-bottom: 20px;
+            color: var(--accent-color);
         }
 
         .video-container {
@@ -75,8 +75,8 @@
             height: 0;
             overflow: hidden;
             background: #000;
-            border-radius: 8px;
-            margin-bottom: 30px;
+            border-radius: 6px;
+            margin-bottom: 25px;
             border: 1px solid var(--border-color);
         }
 
@@ -90,20 +90,20 @@
         }
 
         .detail-section {
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .detail-section h3 {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--accent-color);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 6px;
         }
 
         .detail-section p, .detail-section ul {
             color: var(--text-sub);
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
         .detail-section ul {
@@ -112,7 +112,7 @@
         }
 
         .detail-section li {
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .detail-section strong {
