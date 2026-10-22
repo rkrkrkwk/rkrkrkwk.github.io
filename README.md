@@ -1,3 +1,0 @@
-# rkrkrkwk.github.io
-
-test
