@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로젝트 상세 정보</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-sub: #94a3b8;
+            --accent-color: #38bdf8;
+            --border-color: #334155;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav {
+            padding: 30px 0;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 600;
+        }
+
+        .project-detail-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            padding: 30px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background: #000;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .detail-section {
+            margin-bottom: 30px;
+        }
+
+        .detail-section h3 {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 6px;
+        }
+
+        .detail-section p, .detail-section ul {
+            color: var(--text-sub);
+            font-size: 1rem;
+        }
+
+        .detail-section ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        .detail-section li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; 메인으로 돌아가기</a>
+        </nav>
+
+        <div class="project-detail-card">
+            <h1>1인 개발 RPG 프로젝트 상세</h1>
+
+            <!-- 시연 영상 -->
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/여기에_유튜브_영상_ID" title="Project Play Video" allowfullscreen></iframe>
+            </div>
+
+            <div class="detail-section">
+                <h3>프로젝트 개요</h3>
+                <p>(프로젝트에 대한 전반적인 소개를 자유롭게 적어주세요.)</p>
+            </div>
+
+            <div class="detail-section">
+                <h3>시스템별 세부 정보</h3>
+                <ul>
+                    <li><strong>인벤토리 시스템:</strong> (상세 설명)</li>
+                    <li><strong>스탯 시스템:</strong> (상세 설명)</li>
+                    <li><strong>스킬 시스템:</strong> (상세 설명)</li>
+                    <li><strong>아이템 시스템:</strong> (상세 설명)</li>
+                    <li><strong>장비 시스템:</strong> (상세 설명)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
