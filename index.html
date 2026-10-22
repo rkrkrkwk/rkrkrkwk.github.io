@@ -8,6 +8,7 @@
         :root {
             --bg-color: #0f172a;
             --card-bg: #1e293b;
+            --card-hover: #334155;
             --text-main: #f8fafc;
             --text-sub: #94a3b8;
             --accent-color: #38bdf8;
@@ -19,7 +20,7 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
         }
 
         body {
@@ -35,27 +36,41 @@
             transition: color 0.2s;
         }
 
-        a:hover {
-            color: var(--accent-hover);
-        }
-
         .container {
             max-width: 900px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* 헤더 / 프로필 섹션 */
+        /* 프로필 섹션 */
         header {
             padding: 60px 0 40px 0;
             border-bottom: 1px solid var(--border-color);
+        }
+
+        .role-badge {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-color);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
         }
 
         .profile-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 12px;
-            padding: 30px;
+            padding: 25px;
             margin-top: 20px;
         }
 
@@ -75,24 +90,6 @@
             color: var(--text-main);
             display: inline-block;
             width: 70px;
-        }
-
-        .role-badge {
-            display: inline-block;
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--accent-color);
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            border: 1px solid rgba(56, 189, 248, 0.2);
-        }
-
-        h1 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 10px;
         }
 
         .social-links {
@@ -115,11 +112,6 @@
             transition: all 0.2s;
         }
 
-        .btn:hover {
-            background: var(--border-color);
-            color: #fff;
-        }
-
         .btn-primary {
             background: var(--accent-color);
             color: #0f172a;
@@ -135,7 +127,6 @@
         /* 섹션 공통 */
         section {
             padding: 40px 0;
-            border-bottom: 1px solid var(--border-color);
         }
 
         .section-title {
@@ -156,33 +147,41 @@
             border-radius: 2px;
         }
 
-        /* 프로젝트 섹션 */
-        .project-card {
+        /* 프로젝트 카드 (링크형) */
+        .project-link-card {
+            display: block;
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 12px;
-            overflow: hidden;
-        }
-
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            background: #000;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        .project-content {
             padding: 25px;
+            color: var(--text-main);
+            transition: all 0.25s ease;
+            position: relative;
+        }
+
+        .project-link-card:hover {
+            background: var(--card-hover);
+            border-color: var(--accent-color);
+            transform: translateY(-3px);
+            color: var(--text-main);
+        }
+
+        .project-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .arrow-icon {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            font-weight: bold;
         }
 
         .system-list {
@@ -192,9 +191,10 @@
 
         .system-list li {
             position: relative;
-            padding-left: 20px;
-            margin-bottom: 10px;
+            padding-left: 18px;
+            margin-bottom: 8px;
             color: var(--text-sub);
+            font-size: 0.95rem;
         }
 
         .system-list li::before {
@@ -202,14 +202,12 @@
             position: absolute;
             left: 0;
             color: var(--accent-color);
-            font-weight: bold;
         }
 
         .system-list strong {
             color: var(--text-main);
         }
 
-        /* 푸터 */
         footer {
             margin-top: 40px;
             text-align: center;
@@ -224,48 +222,44 @@
         <!-- 프로필 섹션 -->
         <header>
             <span class="role-badge">Unity Client Developer</span>
-            <h1>포트폴리오</h1>
+            <h1>이름 / 포트폴리오</h1>
 
             <div class="profile-card">
                 <h3>Profile</h3>
                 <div class="profile-grid">
-                    <div class="profile-item"><strong>이름</strong> 김동권</div>
-                    <div class="profile-item"><strong>이메일</strong> rkrkrkwk@gmail.com</div>
-                    <div class="profile-item"><strong>연락처</strong> 010-9203-7214</div>
+                    <div class="profile-item"><strong>이름</strong> 홍길동</div>
+                    <div class="profile-item"><strong>이메일</strong> example@email.com</div>
+                    <div class="profile-item"><strong>연락처</strong> 010-0000-0000</div>
                     <div class="profile-item"><strong>기술 스택</strong> Unity, C#, Git</div>
                 </div>
             </div>
 
             <div class="social-links">
-                <!-- 본인의 GitHub 레포지토리 주소를 입력하세요 -->
-                <a href="https://github.com/rkrkrkwk/Project_Fantasy" target="_blank" class="btn btn-primary">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                <a href="https://github.com/" target="_blank" class="btn btn-primary">
                     GitHub Repository
                 </a>
             </div>
         </header>
 
-        <!-- 프로젝트 섹션 -->
+        <!-- 프로젝트 목록 섹션 -->
         <section id="project">
-            <h2 class="section-title">Project Fantasy</h2>
+            <h2 class="section-title">프로젝트 목록</h2>
             
-            <div class="project-card">
-                <!-- 시연 영상 (유튜브 영상 ID 적용) -->
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/여기에_유튜브_영상_ID" title="Project Play Video" allowfullscreen></iframe>
+            <!-- 다른 HTML 파일로 연결되는 프로젝트 카드 -->
+            <a href="project-detail.html" class="project-link-card">
+                <div class="project-card-header">
+                    <h3 class="project-title">1인 개발 RPG 프로젝트</h3>
+                    <span class="arrow-icon">상세보기 &rarr;</span>
                 </div>
-
-                <div class="project-content">
-                    <h3>구현 시스템 목록</h3>
-                    <ul class="system-list">
-                        <li><strong>인벤토리 시스템:</strong> (내용 작성 칸)</li>
-                        <li><strong>스탯 시스템:</strong> (내용 작성 칸)</li>
-                        <li><strong>스킬 시스템:</strong> (내용 작성 칸)</li>
-                        <li><strong>아이템 시스템:</strong> (내용 작성 칸)</li>
-                        <li><strong>장비 시스템:</strong> (내용 작성 칸)</li>
-                    </ul>
-                </div>
-            </div>
+                
+                <ul class="system-list">
+                    <li><strong>인벤토리 시스템:</strong> (내용 작성 칸)</li>
+                    <li><strong>스탯 시스템:</strong> (내용 작성 칸)</li>
+                    <li><strong>스킬 시스템:</strong> (내용 작성 칸)</li>
+                    <li><strong>아이템 시스템:</strong> (내용 작성 칸)</li>
+                    <li><strong>장비 시스템:</strong> (내용 작성 칸)</li>
+                </ul>
+            </a>
         </section>
 
         <footer>
