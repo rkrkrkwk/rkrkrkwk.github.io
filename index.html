@@ -3,24 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unity 개발자 포트폴리오 | 다크 테마</title>
+    <title>Unity 개발자 포트폴리오</title>
     <style>
         :root {
-            --bg-color: #0b0f19;
-            --card-bg: #151c2c;
-            --card-hover: #1e293b;
-            --text-main: #f1f5f9;
-            --text-sub: #94a3b8;
-            --accent-color: #38bdf8;
-            --accent-hover: #0284c7;
-            --border-color: #243048;
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --card-hover: #292929;
+            --text-main: #e3e3e3;
+            --text-sub: #a0a0a0;
+            --border-color: #333333;
+            --accent-color: #ffffff;
+            --button-bg: #2d2d2d;
+            --button-hover: #3d3d3d;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
         }
 
         body {
@@ -31,75 +32,74 @@
         }
 
         a {
-            color: var(--accent-color);
+            color: var(--text-main);
             text-decoration: none;
-            transition: color 0.2s;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 850px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
+        /* 헤더 / 프로필 */
         header {
-            padding: 60px 0 40px 0;
+            padding: 50px 0 30px 0;
             border-bottom: 1px solid var(--border-color);
         }
 
         .role-badge {
             display: inline-block;
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--accent-color);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            border: 1px solid rgba(56, 189, 248, 0.25);
+            background: var(--button-bg);
+            color: var(--text-sub);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+            border: 1px solid var(--border-color);
         }
 
         h1 {
-            font-size: 2.2rem;
+            font-size: 2rem;
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            color: var(--accent-color);
         }
 
         .profile-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 25px;
-            margin-top: 20px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 15px;
         }
 
         .profile-card h3 {
-            font-size: 1.1rem;
-            color: var(--accent-color);
-            margin-bottom: 15px;
+            font-size: 1rem;
+            color: var(--text-sub);
+            margin-bottom: 12px;
         }
 
         .profile-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
         }
 
         .profile-item {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: var(--text-sub);
         }
 
         .profile-item strong {
             color: var(--text-main);
             display: inline-block;
-            width: 70px;
+            width: 65px;
         }
 
         .social-links {
             display: flex;
-            gap: 15px;
+            gap: 12px;
             margin-top: 20px;
         }
 
@@ -107,104 +107,82 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: var(--card-bg);
+            background: var(--button-bg);
             color: var(--text-main);
-            padding: 10px 18px;
-            border-radius: 8px;
+            padding: 8px 16px;
+            border-radius: 6px;
             border: 1px solid var(--border-color);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: all 0.2s;
+            font-size: 0.9rem;
+            transition: background 0.2s;
         }
 
-        .btn-primary {
-            background: var(--accent-color);
-            color: #0b0f19;
-            border: none;
-            font-weight: 600;
+        .btn:hover {
+            background: var(--button-hover);
         }
 
-        .btn-primary:hover {
-            background: var(--accent-hover);
-            color: #fff;
-        }
-
+        /* 섹션 */
         section {
-            padding: 40px 0;
+            padding: 35px 0;
         }
 
         .section-title {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 700;
             margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            color: var(--accent-color);
         }
 
-        .section-title::before {
-            content: '';
-            display: inline-block;
-            width: 4px;
-            height: 18px;
-            background: var(--accent-color);
-            border-radius: 2px;
-        }
-
+        /* 프로젝트 카드 */
         .project-link-card {
             display: block;
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 25px;
-            color: var(--text-main);
-            transition: all 0.25s ease;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 20px;
+            transition: background 0.2s, border-color 0.2s;
         }
 
         .project-link-card:hover {
             background: var(--card-hover);
-            border-color: var(--accent-color);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(56, 189, 248, 0.15);
+            border-color: #555555;
         }
 
         .project-card-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .project-title {
-            font-size: 1.3rem;
-            font-weight: 700;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--accent-color);
         }
 
         .arrow-icon {
-            color: var(--accent-color);
-            font-size: 1rem;
-            font-weight: 600;
+            color: var(--text-sub);
+            font-size: 0.9rem;
         }
 
         .system-list {
             list-style: none;
-            margin-top: 15px;
+            margin-top: 10px;
         }
 
         .system-list li {
             position: relative;
-            padding-left: 18px;
-            margin-bottom: 8px;
+            padding-left: 16px;
+            margin-bottom: 6px;
             color: var(--text-sub);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         .system-list li::before {
             content: "•";
             position: absolute;
             left: 0;
-            color: var(--accent-color);
+            color: var(--text-sub);
         }
 
         .system-list strong {
@@ -215,7 +193,7 @@
             margin-top: 40px;
             text-align: center;
             color: var(--text-sub);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
         }
     </style>
 </head>
@@ -237,7 +215,7 @@
             </div>
 
             <div class="social-links">
-                <a href="https://github.com/" target="_blank" class="btn btn-primary">
+                <a href="https://github.com/" target="_blank" class="btn">
                     GitHub Repository
                 </a>
             </div>
@@ -263,7 +241,7 @@
         </section>
 
         <footer>
-            <p>© Portfolio. Built with Dark Theme HTML/CSS.</p>
+            <p>© Portfolio. Dark Theme.</p>
         </footer>
     </div>
 
