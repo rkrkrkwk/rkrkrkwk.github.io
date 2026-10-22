@@ -124,4 +124,284 @@
         .section-title {
             font-size: 1.5rem;
             font-weight: 700;
-            margin-bottom: 25
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 20px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        /* 프로젝트 섹션 */
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 비율 */
+            height: 0;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .project-content {
+            padding: 30px;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--accent-color);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(56, 189, 248, 0.15);
+        }
+
+        /* 시스템 모듈 설명 */
+        .system-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .system-item {
+            background: rgba(15, 23, 42, 0.6);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .system-item h4 {
+            color: var(--accent-color);
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+        }
+
+        .system-item ul {
+            list-style: none;
+            font-size: 0.95rem;
+            color: var(--text-sub);
+        }
+
+        .system-item li {
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 5px;
+        }
+
+        .system-item li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        /* 트러블 슈팅 섹션 */
+        .trouble-box {
+            background: rgba(15, 23, 42, 0.6);
+            border-left: 4px solid var(--accent-color);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 20px;
+        }
+
+        .trouble-box h4 {
+            font-size: 1.05rem;
+            margin-bottom: 10px;
+        }
+
+        .trouble-box p {
+            font-size: 0.95rem;
+            color: var(--text-sub);
+            margin-bottom: 8px;
+        }
+
+        /* 기술 스택 섹션 */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .skill-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .skill-card p {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+        }
+
+        /* 푸터 */
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            color: var(--text-sub);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- 헤더 / 인트로 -->
+        <header>
+            <span class="role-badge">Unity Client Developer</span>
+            <h1>모듈식 시스템 설계를 지향하는<br>클라이언트 개발자 포트폴리오</h1>
+            <p class="header-bio">
+                C#과 Unity를 기반으로 2D RPG 핵심 메카닉을 1인 개발했습니다.<br>
+                ScriptableObject 기반의 데이터 분리와 Event 처리 방식을 활용해 유지보수가 쉽고 확장성 있는 아키텍처를 고민합니다.
+            </p>
+            <div class="social-links">
+                <!-- 본인의 GitHub 레포지토리 링크로 수정하세요 -->
+                <a href="https://github.com/사용자ID/프로젝트레포지토리" target="_blank" class="btn btn-primary">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    GitHub Repository
+                </a>
+            </div>
+        </header>
+
+        <!-- 메인 프로젝트 섹션 -->
+        <section id="project">
+            <h2 class="section-title">주요 프로젝트</h2>
+            
+            <div class="project-card">
+                <!-- 유튜브 시연 영상 (링크의 ID 부분을 본인 유튜브 영상 ID로 바꾸세요) -->
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/여기에_유튜브_영상_ID" title="Project Play Video" allowfullscreen></iframe>
+                </div>
+
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3 class="project-title">2D RPG Core Mechanics (1인 개발)</h3>
+                    </div>
+
+                    <div class="tech-tags">
+                        <span class="tag">Unity 2D</span>
+                        <span class="tag">C#</span>
+                        <span class="tag">ScriptableObject</span>
+                        <span class="tag">Event-Driven Architecture</span>
+                    </div>
+
+                    <p style="color: var(--text-sub); margin-bottom: 20px;">
+                        RPG의 핵심 요소인 인벤토리, 스탯, 장비, 스킬 시스템을 구현한 프로젝트입니다. 각 시스템 간의 직접적인 참조를 줄이고, 확장성 있는 구조를 만드는 데 집중했습니다.
+                    </p>
+
+                    <!-- 주요 시스템 요약 -->
+                    <h4 style="margin-bottom: 10px;">주요 구현 시스템</h4>
+                    <div class="system-grid">
+                        <div class="system-item">
+                            <h4>인벤토리 & 아이템</h4>
+                            <ul>
+                                <li>ScriptableObject 기반 데이터 설계</li>
+                                <li>UI와 Logic 분리 (MVC/MVP 형태)</li>
+                                <li>아이템 습득, 슬롯 이동, 소모 구현</li>
+                            </ul>
+                        </div>
+                        <div class="system-item">
+                            <h4>스탯 & 장비 연동</h4>
+                            <ul>
+                                <li>Base Stat 및 Bonus Stat 분리 연산</li>
+                                <li>장비 착용/해제 시 실시간 스탯 반영</li>
+                                <li>이벤트 구독을 통한 UI 자동 갱신</li>
+                            </ul>
+                        </div>
+                        <div class="system-item">
+                            <h4>스킬 시스템</h4>
+                            <ul>
+                                <li>스탯 계수 연동 데미지 연산</li>
+                                <li>스킬 쿨타임 및 자원 소모 로직</li>
+                                <li>모듈식 스킬 발사체 설계</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 트러블슈팅 / 고민한 점 -->
+                    <div class="trouble-box">
+                        <h4>💡 기술적 고민 및 구조 개선 (Decoupling)</h4>
+                        <p><strong>문제:</strong> 초기에는 장비 착용 시 스탯 변경과 UI/스킬 데미지 갱신이 직접 참조로 얽혀있어 버그 수정 및 확장 시 어려움이 있었습니다.</p>
+                        <p><strong>해결:</strong> C# Action 기반의 Event 구독 방식을 도입하여 장비 변경 이벤트 수신 시 각 시스템(UI, 스탯 연산기)이 독립적으로 반응하도록 리팩토링하여 클래스 간 의존성을 크게 줄였습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 기술 스택 섹션 -->
+        <section id="skills">
+            <h2 class="section-title">기술 스택 (Skills)</h2>
+            <div class="skills-container">
+                <div class="skill-card">
+                    <h3>Engine & Language</h3>
+                    <p>Unity Engine (2D/3D), C#</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Architecture</h3>
+                    <p>OOP, ScriptableObject Data-Driven, Event-Driven Pattern</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Version Control</h3>
+                    <p>Git, GitHub, Git LFS</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 푸터 -->
+        <footer>
+            <p>© 2026 Unity Client Developer Portfolio. Built with HTML/CSS.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
