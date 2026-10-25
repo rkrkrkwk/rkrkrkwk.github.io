@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -12,6 +13,7 @@
             --text-sub: #a0a0a0;
             --border-color: #333333;
             --accent-color: #ffffff;
+            --badge-bg: #2d2d2d;
         }
 
         * {
@@ -90,13 +92,13 @@
         }
 
         .detail-section {
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
 
         .detail-section h3 {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             color: var(--accent-color);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 6px;
         }
@@ -112,11 +114,22 @@
         }
 
         .detail-section li {
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
 
         .detail-section strong {
             color: var(--text-main);
+        }
+
+        .tag {
+            display: inline-block;
+            background: var(--badge-bg);
+            color: var(--text-sub);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-left: 6px;
+            border: 1px solid var(--border-color);
         }
     </style>
 </head>
@@ -128,45 +141,50 @@
         </nav>
 
         <div class="project-detail-card">
-            <h1>1인 개발 RPG 프로젝트 상세</h1>
+            <h1>1인 개발 오픈월드 2D RPG 프로젝트 상세</h1>
 
+            <!-- 시연 영상 영역 -->
             <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/여기에_유튜브_영상_ID" title="Project Play Video" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/YOUR_YOUTUBE_ID" title="Project Play Video" allowfullscreen></iframe>
             </div>
 
+            <!-- 프로젝트 개요 -->
             <div class="detail-section">
                 <h3>프로젝트 개요</h3>
-                <p>(프로젝트에 대한 전반적인 소개를 자유롭게 적어주세요.)</p>
+                <p>게임 속 세상에 전생하는 여러 웹툰에서 영감을 받아, 몰입감 있는 게임 경험을 직접 구현하고자 시작한 1인 개발 프로젝트입니다. 정해진 성장 방식에서 벗어나 플레이어가 자신만의 성장 방향과 빌드를 자유롭게 구축할 수 있는 시스템을 목표로 개발하고 있습니다.</p>
             </div>
 
+            <!-- 주요 컨텐츠 & 스토리라인 기획 -->
             <div class="detail-section">
-                <h3>인벤토리 시스템</h3>
+                <h3>주요 기획 및 비전</h3>
                 <ul>
-                    <li>상세 설명</li>
+                    <li><strong>비선형적 오픈월드 스토리:</strong> 《엘더스크롤 5: 스카이림》과 같이 메인 스토리가 존재하되 강제되지 않고, 자유로운 탐험이 가능한 구조를 지향합니다.</li>
+                    <li><strong>다채로운 스탯과 빌드:</strong> 다양한 스탯 종류를 활용해 유저가 세부적인 조합을 만들고 자신만의 전투 스타일을 구축할 수 있습니다.</li>
+                    <li><strong>종말 위기 시스템:</strong> 월드 내에 다양한 종말 요소가 존재하여 특정 트리거를 제때 막지 못하면 게임 오버로 직결됩니다.</li>
+                    <li><strong>로그라이트 성장 구조:</strong> 게임 오버 시 월드는 리셋되지만 핵심 스펙(성장치)은 유지되어 지속적인 도전과 성장이 가능합니다.</li>
                 </ul>
             </div>
+
+            <!-- 핵심 시스템 구현 내역 -->
             <div class="detail-section">
-                <h3>스탯 시스템</h3>
+                <h3>구현 완료 시스템 <span class="tag">기여도 100%</span></h3>
                 <ul>
-                    <li>상세 설명</li>
+                    <li><strong>데이터 구조 설계:</strong> ScriptableObject를 활용해 아이템, 스탯, 스킬 데이터를 코드가 아닌 데이터 기반(Data-Driven)으로 분리 설계</li>
+                    <li><strong>UI 시스템:</strong> 인벤토리 슬롯 조작, 스탯 및 스킬 인터페이스와 로직 간 동기화 구현</li>
+                    <li><strong>인벤토리 & 아이템 시스템:</strong> 아이템 습득, 정렬, 사용 및 스택 관리 기능 구축</li>
+                    <li><strong>스탯 & 장비 시스템:</strong> 장비 착용 시 실시간 스탯 변화 계산 및 캐싱 로직 구현</li>
+                    <li><strong>스킬 시스템:</strong> 스킬 쿨타임, 자원 소모, 이벤트 기반 액션 연동 구조 설계</li>
                 </ul>
             </div>
+
+            <!-- 개발 로드맵 -->
             <div class="detail-section">
-                <h3>스킬 시스템</h3>
+                <h3>개발 과정 및 로드맵 (Development Roadmap)</h3>
                 <ul>
-                    <li>상세 설명</li>
-                </ul>
-            </div>
-            <div class="detail-section">
-                <h3>아이템 시스템</h3>
-                <ul>
-                    <li>상세 설명</li>
-                </ul>
-            </div>
-            <div class="detail-section">
-                <h3>장비 시스템</h3>
-                <ul>
-                    <li>상세 설명</li>
+                    <li><strong>Phase 1 (완료):</strong> 코어 메카닉 및 기반 아키텍처 구축 (데이터 구조, 인벤토리, 스탯, 스킬, 장비, UI 기본 시스템)</li>
+                    <li><strong>Phase 2 (예정):</strong> 시스템 확장 및 콘텐츠 고도화 (장비 고유 스킬 해제, 스킬 숙련도 및 조건부 진화 로직, 강화 요소를 통한 고점 확장)</li>
+                    <li><strong>Phase 3 (예정):</strong> 오픈월드 및 내러티브 시스템 구축 (비선형 퀘스트 프레임워크, 종말 트리거 및 타이머/조건 제어 시스템)</li>
+                    <li><strong>Phase 4 (예정):</strong> 로그라이트 루프 및 최종 완성 (게임 오버 시 핵심 스펙 유지/월드 리셋 데이터 관리, 밸런싱 및 UI/UX 폴리싱)</li>
                 </ul>
             </div>
         </div>
